@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int mdc2(int a,int b);
+
+int main()
+{
+int a,b;
+char op;
+do{
+printf("Informe dois numeros inteiros: ");
+scanf("%i%i",&a,&b);
+printf("m.d.c => %i\n",mdc2(a,b));
+printf("\nDeseja calcular outro mdc? ");
+scanf("%s",&op);
+}
+while((op=='s')||(op=='S')); 
+system("Pause");
+}
+int mdc2(int a,int b)
+{
+if(b == 0) return a;
+else
+return mdc2(b,a%b);
+}
